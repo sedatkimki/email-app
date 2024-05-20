@@ -30,7 +30,7 @@ const loginFormSchema = z.object({
 });
 
 type LoginFormValues = z.infer<typeof loginFormSchema>;
-
+// Login ekranı kullanıcı bilgileri ile giriş yapılmasını sağlar
 export function Login() {
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginFormSchema),
@@ -46,6 +46,7 @@ export function Login() {
   }
 
   async function onSubmit(values: LoginFormValues) {
+    // Kullanıcı giriş yaparken hata oluşursa kullanıcıya hata mesajı gösterilir
     try {
       await login(values.email, values.password);
     } catch (error) {

@@ -12,6 +12,8 @@ interface MailListProps {
   items: UserMailDto[];
 }
 
+// Mail listesi
+
 export function MailList({ items }: MailListProps) {
   const [mail, setMail] = useMail();
   const { updateEmail } = useEmails();

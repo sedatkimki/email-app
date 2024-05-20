@@ -40,6 +40,7 @@ const replyMailFormSchema = z.object({
 });
 type ReplyMailFormValues = z.infer<typeof replyMailFormSchema>;
 
+// Mail detayları burada gösteriliyor ve maile cevap verme formu burada bulunuyor
 export function MailDisplay({ mail }: MailDisplayProps) {
   const form = useForm<ReplyMailFormValues>({
     resolver: zodResolver(replyMailFormSchema),
@@ -72,6 +73,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
 
   async function onSubmit(values: ReplyMailFormValues) {
     try {
+      // Gönderilen mailin içeriği ve başlığı kontrol ediliyor
       await EmailAPI.sendEmail({
         to: [
           {
@@ -100,7 +102,7 @@ export function MailDisplay({ mail }: MailDisplayProps) {
       );
     }
   }
-
+  // Gönderilen mailin parentları burada gösteriliyor
   const renderParents = (mail: UserMailDto | null) => {
     const parents = getAllParentsAsArray(mail);
 

@@ -22,6 +22,8 @@ interface NavProps {
   }[];
 }
 
+// Sayfanın sol tarafında bulunan navigasyon menüsü
+
 export function Nav({ links, isCollapsed }: NavProps) {
   const [newMailDialog, setNewMailDialog] = React.useState(false);
   const onNewMail = () => {

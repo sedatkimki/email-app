@@ -4,6 +4,7 @@ import { AuthApiApi, EmailApiApi, TagApiApi, UserApiApi } from "./client";
 
 export const baseURL = "http://localhost:8080";
 
+// backend api'ye erişim sağlayan axios instance
 const globalAxios = axios.create({
   baseURL: baseURL,
   headers: {
@@ -40,6 +41,7 @@ globalAxios.interceptors.response.use(
   }
 );
 
+// endpointlerin kullanımı için gerekli instance'lar
 export const AuthAPI = new AuthApiApi(undefined, baseURL, globalAxios);
 export const UserAPI = new UserApiApi(undefined, baseURL, globalAxios);
 export const EmailAPI = new EmailApiApi(undefined, baseURL, globalAxios);

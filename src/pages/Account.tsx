@@ -16,6 +16,7 @@ interface AccountSwitcherProps {
 }
 
 export function Account({ isCollapsed }: AccountSwitcherProps) {
+  // Kullanıcı bilgilerini ve çıkış yapma fonksiyonunu kullanmak için useUser hook'u kullanılır
   const { user, logout } = useUser();
   return (
     <DropdownMenu>

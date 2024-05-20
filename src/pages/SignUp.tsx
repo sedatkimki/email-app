@@ -31,7 +31,7 @@ const signUpFormSchema = z.object({
 });
 
 type SignUpFormValues = z.infer<typeof signUpFormSchema>;
-
+// Kullanıcı kaydolma ekranı
 export function SignUp() {
   const form = useForm<SignUpFormValues>({
     resolver: zodResolver(signUpFormSchema),

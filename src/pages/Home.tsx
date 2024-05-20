@@ -27,6 +27,7 @@ interface MailProps {
   navCollapsedSize: number;
 }
 
+// Ana mail sayfası
 export function Mail({
   mails,
   defaultLayout = [265, 440, 655],
@@ -230,6 +231,7 @@ export function Mail({
 }
 
 export function Home() {
+  // anasayfa burada mail bilgileri servisten çekiliyor
   const layout = getCookie("react-resizable-panels:layout");
   const collapsed = getCookie("react-resizable-panels:collapsed");
   const defaultLayout = layout ? JSON.parse(layout) : undefined;
